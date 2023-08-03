@@ -10,3 +10,4 @@ class BotStates(StatesGroup):
     # preview mode - preview each photo before post
     preview_mode = State(state="preview_mode")
     change_chanel = State(state="change_channel")
+    custom_dir = State(state="custom_dir")

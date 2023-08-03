@@ -5,7 +5,7 @@ from aiogram.types import KeyboardButton, InlineKeyboardButton
 class StartKeyboard():
     kb = [
         [KeyboardButton(text="Post Photos")],
-        [KeyboardButton(text="Change Default Directory")]
+        # [KeyboardButton(text="Change Default Directory")]
     ]
 
 
