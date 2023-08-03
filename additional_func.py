@@ -1,8 +1,7 @@
-from PIL import Image
-import asyncio
 import logging
+from config import bot, channel_id
 import os
-from aiogram.types import FSInputFile
+from aiogram import types
 
 
 async def is_it_image(filename: str) -> bool:
@@ -21,3 +20,9 @@ async def choose_image(directory_path: str):
             if await is_it_image(filename):
                 imgs.append(directory_path + '/' + filename)
     return imgs
+
+
+async def post_photo(photo_path: str):
+    photo = types.FSInputFile(photo_path)
+    await bot.send_photo(channel_id, photo, disable_notification=True)
+    await bot.send_document(channel_id, photo, disable_notification=True)
